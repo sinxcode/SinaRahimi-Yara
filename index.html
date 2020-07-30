@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Keat </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <div class="main" id="main">
+
+
+
+        <button id="new">New</button>
+
+        <button id="add">AddChild</button>
+
+
+        <button id="elementscount">elements Count</button>
+
+        <button id="node-count">Node Count</button>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+    <script>
+        var main = document.getElementById("main");
+
+        var newdiv = document.createElement("div");
+
+
+        newdiv.setAttribute("id", "newdiv");
+
+        var nodenumber = 0;
+
+
+
+
+        document.getElementById("new").onclick = function() {
+
+            main.appendChild(newdiv.cloneNode());
+            nodenumber++;
+
+
+
+
+
+
+        }
+
+        document.getElementById("add").onclick = function() {
+
+            var nodeNumber = prompt("Enter Node Number to Add Child Node ");
+
+            document.getElementsByTagName("div")[nodeNumber].appendChild(newdiv.cloneNode());
+
+
+            nodenumber++
+            console.log(nodenumber);
+
+
+
+
+
+
+
+
+
+        }
+
+        document.getElementById("elementscount").onclick = function() {
+
+            var nodeNumber = prompt("Enter parent node number to get number of child Elements ");
+
+            var b = document.getElementsByTagName("div")[nodeNumber].childElementCount;
+            console.log("number of Elements: " + b);
+
+
+        }
+
+
+
+        document.getElementById("node-count").onclick = function() {
+
+            alert(nodenumber);
+
+
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
